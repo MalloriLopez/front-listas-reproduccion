@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ListasReproduccionService } from '../../services/listas-reproduccion.service';
+import { ListasReproduccionService } from './services/listas-reproduccion.service';
 
 
 
