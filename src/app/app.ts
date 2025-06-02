@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CrearListaComponent } from './feature/listas/components/crear-lista/crear-lista.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CrearListaComponent
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected title = 'front-listas-reproduccion';
+export class AppComponent {
+  title = 'front-listas-reproduccion';
 }
+
+export const App = AppComponent;

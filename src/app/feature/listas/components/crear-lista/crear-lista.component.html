@@ -1,0 +1,57 @@
+<form [formGroup]="listaForm" (ngSubmit)="enviarLista()" class="container mt-4">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Nombre:</label>
+        <input formControlName="nombre" required class="form-control" [ngClass]="{'is-invalid': listaForm.get('nombre')?.touched && listaForm.get('nombre')?.invalid}" />
+        <div *ngIf="listaForm.get('nombre')?.touched && listaForm.get('nombre')?.invalid" class="invalid-feedback">
+          Nombre es requerido
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Descripción:</label>
+        <input formControlName="descripcion" required class="form-control" [ngClass]="{'is-invalid': listaForm.get('descripcion')?.touched && listaForm.get('descripcion')?.invalid}" />
+        <div *ngIf="listaForm.get('descripcion')?.touched && listaForm.get('descripcion')?.invalid" class="invalid-feedback">
+          Descripción es requerida
+        </div>
+      </div>
+    </div>
+  
+    <div formArrayName="canciones">
+      <div *ngFor="let cancion of canciones.controls; let i=index" [formGroupName]="i" class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Canción {{ i + 1 }}</h5>
+          <div class="row g-2">
+            <div class="col-md-4">
+              <label class="form-label">Título:</label>
+              <input formControlName="titulo" required class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Artista:</label>
+              <input formControlName="artista" required class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Álbum:</label>
+              <input formControlName="album" class="form-control" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Año:</label>
+              <input formControlName="anno" class="form-control" />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Género:</label>
+              <input formControlName="genero" class="form-control" />
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button type="button" class="btn btn-danger" (click)="eliminarCancion(i)">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <button type="button" class="btn btn-secondary me-2" (click)="agregarCancion()">Agregar Canción</button>
+      <button type="submit" class="btn btn-primary">Crear lista</button>
+    </div>
+  </form>
+  
