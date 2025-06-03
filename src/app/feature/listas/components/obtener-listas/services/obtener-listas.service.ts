@@ -20,4 +20,37 @@ export class ObtenerListasService {
 
     return this.http.get<any[]>(this.apiUrl, { headers });
   }
+
+  eliminarLista(nombre: string): Observable<any> {
+    const url = `${this.apiUrl}/${encodeURIComponent(nombre)}`;
+  
+    const username = 'usuarioTest';
+    const password = 'password';
+    const basicAuth = 'Basic ' + btoa(`${username}:${password}`);
+  
+    const headers = new HttpHeaders({
+      Authorization: basicAuth,
+      'Content-Type': 'application/json'
+    });
+  
+    return this.http.delete(url, { headers });
+  }
+
+  buscarListaPorNombre(nombre: string): Observable<any> {
+    const url = `${this.apiUrl}/${encodeURIComponent(nombre)}`;
+  
+    const username = 'usuarioTest';
+    const password = 'password';
+    const basicAuth = 'Basic ' + btoa(`${username}:${password}`);
+  
+    const headers = new HttpHeaders({
+      Authorization: basicAuth,
+      'Content-Type': 'application/json'
+    });
+  
+    return this.http.get<any>(url, { headers });
+  }
+  
+  
+  
 }
