@@ -1,59 +1,93 @@
-# FrontListasReproduccion
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+# Frontend - Listas de Reproducción 🎵
 
-## Development server
+Interfaz web moderna para gestionar listas de reproducción musicales. Permite crear, buscar, visualizar y eliminar listas de canciones, integrando autenticación básica mediante un interceptor.
 
-To start a local development server, run:
+---
+
+## 🚀 Tecnologías principales
+
+- **Angular CLI:** 20.0.0
+- **Node:** 22.16.0
+- **npm:** 10.9.2
+- **Bootstrap:** 5.3.3
+- **RxJS:** 7.8.0
+- **Otros:** Standalone API Angular, SCSS, Responsive Design
+
+---
+
+## 📦 Requisitos previos
+
+- Node.js (recomendado: 22.16.0)
+- npm >= 10.9.2
+- Backend Java Spring Boot corriendo en [http://localhost:8080](http://localhost:8080)  
+  > **Importante:** Asegúrate de tener el backend corriendo antes de probar la app.
+
+---
+
+## 🛠 Instalación
+
+```bash
+git clone https://github.com/MalloriLopez/front-listas-reproduccion.git
+```
+```
+cd front-listas-reproduccion
+```
+```
+npm install
+```
+
+## 🛠 Construccion
+
+Para construir el proyecto:
+
+```bash
+ng build
+```
+## ⚙️ Ejecución
+
+Para iniciar el servidor localmente:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🖥️ La aplicacion corre en:
 
-## Code scaffolding
+- **Frontend Angular:**  
+  http://localhost:4200
+  
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🔑 Autenticación
 
-```bash
-ng generate component component-name
-```
+ 
+La aplicación utiliza autenticación básica HTTP mediante un interceptor.
+Credenciales por defecto:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Usuario: usuarioTest
 
-```bash
-ng generate --help
-```
+- Contraseña: password
 
-## Building
+(Estas credenciales deben estar configuradas igual en el backend.)
 
-To build the project run:
 
-```bash
-ng build
-```
+## ✨ Características principales
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
+- Crear listas de reproducción: Llena un formulario, añade canciones y guarda.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- Buscar listas por nombre: Filtra de forma dinámica con un solo clic.
 
-```bash
-ng test
-```
+- Ver todas las listas: Tabla responsiva y elegante, con detalles de cada canción.
 
-## Running end-to-end tests
+- Eliminar listas: Elimina fácilmente con botón dedicado.
 
-For end-to-end (e2e) testing, run:
+- Diseño moderno y responsive: Tipografías y colores personalizables (ver SCSS).
 
-```bash
-ng e2e
-```
+- Autenticación básica con interceptor: No necesitas repetir headers en cada servicio.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🧑‍💻 Autor
 
-## Additional Resources
+Mallori Lopez
+- GitHub: [http://github.com/MalloriLopez) 
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
