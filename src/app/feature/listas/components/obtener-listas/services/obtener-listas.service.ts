@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -9,48 +9,16 @@ export class ObtenerListasService {
   constructor(private http: HttpClient) {}
 
   obtenerListas(): Observable<any[]> {
-    const username = 'usuarioTest';
-    const password = 'password';
-    const basicAuth = 'Basic ' + btoa(`${username}:${password}`);
-
-    const headers = new HttpHeaders({
-      Authorization: basicAuth,
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.get<any[]>(this.apiUrl, { headers });
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   eliminarLista(nombre: string): Observable<any> {
     const url = `${this.apiUrl}/${encodeURIComponent(nombre)}`;
-  
-    const username = 'usuarioTest';
-    const password = 'password';
-    const basicAuth = 'Basic ' + btoa(`${username}:${password}`);
-  
-    const headers = new HttpHeaders({
-      Authorization: basicAuth,
-      'Content-Type': 'application/json'
-    });
-  
-    return this.http.delete(url, { headers });
+    return this.http.delete(url);
   }
 
   buscarListaPorNombre(nombre: string): Observable<any> {
     const url = `${this.apiUrl}/${encodeURIComponent(nombre)}`;
-  
-    const username = 'usuarioTest';
-    const password = 'password';
-    const basicAuth = 'Basic ' + btoa(`${username}:${password}`);
-  
-    const headers = new HttpHeaders({
-      Authorization: basicAuth,
-      'Content-Type': 'application/json'
-    });
-  
-    return this.http.get<any>(url, { headers });
+    return this.http.get<any>(url);
   }
-  
-  
-  
 }
